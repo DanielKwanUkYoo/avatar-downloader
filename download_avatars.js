@@ -1,6 +1,7 @@
 var request = require('request');
 var personal = require('./personal.js');
 var fs = require('fs');
+var arg = process.argv.slice(2);
 
 console.log('Welcome to the GitHub Avatar Downloader!');
 
@@ -30,7 +31,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
 
 
 //cb for checking errors/run
-getRepoContributors("jquery", "jquery", function(err, result) {
+getRepoContributors(arg[0], arg[1], function(err, result) {
   console.log("Errors:", err);
 
 });
